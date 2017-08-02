@@ -4,6 +4,7 @@ import lombok.Data;
 import org.apache.solr.client.solrj.beans.Field;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.solr.core.geo.Point;
+import org.springframework.data.solr.core.mapping.SolrDocument;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ import java.util.List;
  * @since 1.0
  */
 @Data
-//@SolrDocument(solrCoreName = "core20170802")
+@SolrDocument(solrCoreName = "product")
 public class Product {
 
     @Id

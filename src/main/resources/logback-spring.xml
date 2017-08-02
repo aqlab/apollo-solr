@@ -48,6 +48,8 @@
         <logger name="com.codi" level="DEBUG"/>
         <logger name="com.spy" level="DEBUG"/>
 
+        <logger name="org.apache.solr" level="DEBUG"/>
+
         <logger name="org.springframework" level="INFO"/>
         <logger name="org.springboot.sample" level="INFO"/>
         <logger name="org.mybatis" level="INFO"/>

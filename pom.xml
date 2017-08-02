@@ -46,6 +46,11 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-solr</artifactId>
+
+            <!--2.1.0.RELEASE 中baseUrl有bug-->
+            <!--https://github.com/spring-projects/spring-boot/issues/8327-->
+            <!--https://stackoverflow.com/questions/41989663/duplicate-cores-in-url-sent-to-solr-from-spring-boot-solr-data-->
+            <version>2.1.2.RELEASE</version>
         </dependency>
 
 
