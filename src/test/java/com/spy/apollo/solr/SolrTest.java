@@ -4,9 +4,8 @@ import com.spy.apollo.solr.common.Const;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
-import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.client.solrj.response.UpdateResponse;
-import org.apache.solr.common.SolrDocumentList;
+import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrInputDocument;
 import org.junit.After;
 import org.junit.Test;
@@ -48,21 +47,15 @@ public class SolrTest extends BaseTest {
         // 模糊查询
         query.setQuery("desc:*is*"); // => query.set("q","desc:*is*");
 
-        QueryResponse response = solrClient.query(Const.COLLECTION_20170802, query);
-
-        log.debug("response={}", response);
+        response = solrClient.query(Const.COLLECTION_20170802, query);
 
 
-        SolrDocumentList result = response.getResults();
-        if (result != null) {
-            log.debug("result={}", response.getResults());
-
-            result.stream().forEach(item -> {
-                log.debug("id={},name={},desc={}", item.get("id"), item.get("name"), item.get("desc"));
-            });
-        }
     }
 
+    @Override
+    protected void printQueryResponseItem(SolrDocument doc) {
+        log.debug("id={},name={},desc={}", doc.get("id"), doc.get("name"), doc.get("desc"));
+    }
 
     @After
     @Override

@@ -13,4 +13,6 @@ public interface Const {
 
     String COLLECTION_SPY = "collection_spy";
 
+    String COLLECTION_FUND_INFO = "fund_info";
+
 }
